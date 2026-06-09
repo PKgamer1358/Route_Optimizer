@@ -26,7 +26,7 @@ export default function AnalyticsPanel({ history }) {
     <div className="p-4 bg-white shadow-md grid grid-cols-1 md:grid-cols-2 gap-4 border-t">
       <div className="h-48">
         <h3 className="text-sm font-bold text-center mb-2">Vehicle Types Used</h3>
-        <ResponsiveContainer width="100%" height="100%">
+        <ResponsiveContainer width="100%" height={160}>
           <PieChart>
             <Pie data={vehicleStats} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={50} label>
               {vehicleStats.map((entry, index) => <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />)}
@@ -38,7 +38,7 @@ export default function AnalyticsPanel({ history }) {
 
       <div className="h-48">
         <h3 className="text-sm font-bold text-center mb-2">Popular Destinations</h3>
-        <ResponsiveContainer width="100%" height="100%">
+        <ResponsiveContainer width="100%" height={160}>
           <BarChart data={popularDestinations}>
             <XAxis dataKey="name" tick={{fontSize: 10}} interval={0} angle={-30} textAnchor="end" height={40}/>
             <YAxis />
